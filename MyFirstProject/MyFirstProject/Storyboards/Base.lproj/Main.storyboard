@@ -59,6 +59,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="nibSizeMaterialLabel" destination="7Or-7t-ZW4" id="hzb-la-kT1"/>
+                                    <outlet property="penBrandModelNamesLabel" destination="H4v-tN-kNQ" id="OR3-c9-e80"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="IQF-QF-Q9C"/>
                                 </connections>
                             </tableViewCell>
@@ -73,6 +75,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8pX-Ie-6x1">
                             <connections>
                                 <action selector="addButtonTapped:" destination="EOn-dj-MbN" id="MS1-Wd-Lh2"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="71d-sZ-c8E"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -235,6 +238,9 @@
             <point key="canvasLocation" x="-574" y="-34"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="IQF-QF-Q9C"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

@@ -15,6 +15,8 @@ class PenDetailViewController: UIViewController {
     @IBOutlet weak var nibSizeTextField: UITextField!
     @IBOutlet weak var nibMaterialTextField: UITextField!
     
+    // Receiver:
+    var penReceiver: FountainPen?
     
     override func viewDidLoad() {
         super.viewDidLoad()
