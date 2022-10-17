@@ -33,6 +33,13 @@ class PenDetailViewController: UIViewController {
         nibMaterialTextField.text = pen.nibMaterial
     }
     
+    func resetView() {
+        penBrandTextField.text = ""
+        penNameTextField.text = ""
+        nibSizeTextField.text = ""
+        nibMaterialTextField.text = ""
+    }
+    
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
         /// is there text to save?
@@ -54,6 +61,7 @@ class PenDetailViewController: UIViewController {
     }
     
     @IBAction func clearButtonTapped(_ sender: Any) {
+        resetView()
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
