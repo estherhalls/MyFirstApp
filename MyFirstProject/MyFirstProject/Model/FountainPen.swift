@@ -6,14 +6,14 @@
 //
 
 import Foundation
-class FountainPen {
+class FountainPen: Codable {
     var brandName: String
     var penName: String
     var nibSize: String
     var nibMaterial: String
     let id: UUID
     
-    init(brandName: String, penName: String, nibSize: String, nibMaterial: String, id: UUID) {
+    init(brandName: String, penName: String, nibSize: String, nibMaterial: String, id: UUID = UUID()) {
         self.brandName = brandName
         self.penName = penName
         self.nibSize = nibSize
