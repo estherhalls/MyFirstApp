@@ -21,9 +21,8 @@ class PenDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        
-        // Do any additional setup after loading the view.
     }
+    
     // MARK: - Helper Functions
     /// ensures valid pen entry to display. If guard statement passes, we display data of that pen. If it does not, the user is trying to create a new pen entry and no data should be displayed
     func updateUI() {
@@ -58,5 +57,10 @@ class PenDetailViewController: UIViewController {
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
+        if let pen = penReceiver {
+            FountainPenController.sharedInstance.deletePen(penToDelete: pen)
+        }
+        navigationController?.popViewController(animated: true)
     }
+    
 } // End of Class

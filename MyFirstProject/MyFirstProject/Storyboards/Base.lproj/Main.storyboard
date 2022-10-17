@@ -17,33 +17,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="penCell" id="hwl-Xk-wXl" customClass="penTableViewCell" customModule="MyFirstProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="penCell" rowHeight="60" id="hwl-Xk-wXl" customClass="penTableViewCell" customModule="MyFirstProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="390" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hwl-Xk-wXl" id="1jR-uT-yfZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="359.66666666666669" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="359.66666666666669" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CCh-zC-ECX">
-                                            <rect key="frame" x="20.000000000000014" y="5" width="251.33333333333337" height="33.666666666666664"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="CCh-zC-ECX">
+                                            <rect key="frame" x="20" y="11.333333333333332" width="311.66666666666669" height="37.666666666666671"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Pen Brand + Model)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4v-tN-kNQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="18"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="311.66666666666669" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-iE-VrN">
-                                                    <rect key="frame" x="0.0" y="18" width="251.33333333333334" height="15.666666666666664"/>
+                                                    <rect key="frame" x="0.0" y="22" width="311.66666666666669" height="15.666666666666664"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nib Size &amp; Material:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSC-gA-Tmp">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="Nib Size &amp; Material:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSC-gA-Tmp">
                                                             <rect key="frame" x="0.0" y="0.0" width="118.66666666666667" height="15.666666666666666"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Nib Size &amp; Material)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Or-7t-ZW4">
-                                                            <rect key="frame" x="126.66666666666666" y="0.0" width="124.66666666666666" height="15.666666666666666"/>
+                                                            <rect key="frame" x="126.66666666666666" y="0.0" width="184.99999999999997" height="15.666666666666666"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -56,12 +56,13 @@
                                     <constraints>
                                         <constraint firstItem="CCh-zC-ECX" firstAttribute="leading" secondItem="1jR-uT-yfZ" secondAttribute="leading" constant="20" id="Jdp-DZ-xHc"/>
                                         <constraint firstItem="CCh-zC-ECX" firstAttribute="centerY" secondItem="1jR-uT-yfZ" secondAttribute="centerY" id="dph-3F-TQE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="CCh-zC-ECX" secondAttribute="trailing" constant="20" id="hah-Od-N5Q"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nibSizeMaterialLabel" destination="7Or-7t-ZW4" id="hzb-la-kT1"/>
                                     <outlet property="penBrandModelNamesLabel" destination="H4v-tN-kNQ" id="OR3-c9-e80"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="IQF-QF-Q9C"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toDetailVC" id="FbJ-72-8Ls"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -168,6 +169,9 @@
                                         <color key="tintColor" red="0.66987693738107379" green="0.7318896264145055" blue="0.72030738733195054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Clear">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.66987693739999998" green="0.73188962639999999" blue="0.72030738729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -179,6 +183,9 @@
                                         <color key="tintColor" red="0.7318896264145055" green="0.33221996850549895" blue="0.20376693231022786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Delete">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.73188962639999999" green="0.26411786729999998" blue="0.19021954199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -238,7 +245,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IQF-QF-Q9C"/>
+        <segue reference="FbJ-72-8Ls"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondaryLabelColor">

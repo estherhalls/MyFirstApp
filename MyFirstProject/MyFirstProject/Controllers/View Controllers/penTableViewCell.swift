@@ -15,7 +15,7 @@ class penTableViewCell: UITableViewCell {
     
     // Call this method in table view conteroller when building UI of the cell
     func configureCell(with pen: FountainPen) {
-        penBrandModelNamesLabel.text = "\(pen.brandName)\(pen.penName)"
+        penBrandModelNamesLabel.text = "\(pen.brandName) \(pen.penName)"
         nibSizeMaterialLabel.text = "\(pen.nibSize), \(pen.nibMaterial)"
     }
     

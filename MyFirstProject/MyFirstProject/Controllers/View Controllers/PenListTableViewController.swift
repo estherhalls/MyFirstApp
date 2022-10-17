@@ -11,12 +11,15 @@ class PenListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        /// Tableview to scale cell height to its content
+        tableView.rowHeight = UITableView.automaticDimension
+        /// estimated height to start calculating from
+        tableView.estimatedRowHeight = 60
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        /// When the table view displays after user presses save/delete on detail view and it navigates back
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -29,7 +32,7 @@ class PenListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /// set reuse identifier and cell typcasted type as set on storyboard
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "toDetailVC", for: indexPath) as? penTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "penCell", for: indexPath) as? penTableViewCell else { return UITableViewCell() }
         /// use indexPath from the row to find which pen should be displayed
         let pen = FountainPenController.sharedInstance.fountainPens[indexPath.row]
         /// Call the build cell method from the custom cell file
