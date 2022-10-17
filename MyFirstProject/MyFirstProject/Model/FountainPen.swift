@@ -22,6 +22,7 @@ class FountainPen: Codable {
     }
 } // end of class
 
+/// extending the FountainPen class to adopt and conform to the equatable protocol to give a way for cell entries to compare themselves to other entries in order for us to index and delete in model controller
 extension FountainPen: Equatable {
     static func == (lhs: FountainPen, rhs: FountainPen) -> Bool {
         return lhs.id == rhs.id
