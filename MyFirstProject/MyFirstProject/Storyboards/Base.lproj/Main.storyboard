@@ -11,7 +11,7 @@
         <!--Fountain Pen Collection-->
         <scene sceneID="jbZ-t0-fEZ">
             <objects>
-                <tableViewController id="EOn-dj-MbN" sceneMemberID="viewController">
+                <tableViewController id="EOn-dj-MbN" customClass="PenListTableViewController" customModule="MyFirstProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="as2-EM-BrB">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Fountain Pen Collection" id="FAl-8Q-clu">
                         <barButtonItem key="backBarButtonItem" title="All Pens" id="bPm-on-8hF"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8pX-Ie-6x1"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8pX-Ie-6x1">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="EOn-dj-MbN" id="MS1-Wd-Lh2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eem-XB-edg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -80,13 +84,13 @@
         <!--Pen Details-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyFirstProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PenDetailViewController" customModule="MyFirstProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zrg-5O-2RD">
-                                <rect key="frame" x="30" y="151" width="330" height="166"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zrg-5O-2RD">
+                                <rect key="frame" x="30" y="136" width="330" height="166"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3gy-hk-0df">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
@@ -154,8 +158,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Raa-G3-LEe">
-                                <rect key="frame" x="50" y="370" width="290" height="35.666666666666664"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Raa-G3-LEe">
+                                <rect key="frame" x="50" y="352" width="290" height="35.666666666666686"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImJ-fN-INr">
                                         <rect key="frame" x="0.0" y="0.0" width="135" height="35.666666666666664"/>
@@ -164,14 +168,20 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Clear">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xlQ-Bw-DCl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-Uf-HmK">
                                         <rect key="frame" x="155" y="0.0" width="135" height="35.666666666666664"/>
-                                        <color key="tintColor" red="0.7318896264145055" green="0.26411786733870857" blue="0.19021954198211585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.7318896264145055" green="0.33221996850549895" blue="0.20376693231022786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Delete">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eH4-7P-iF8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -183,13 +193,24 @@
                             <constraint firstItem="Raa-G3-LEe" firstAttribute="top" secondItem="Zrg-5O-2RD" secondAttribute="bottom" constant="50" id="Nua-vW-Est"/>
                             <constraint firstItem="Zrg-5O-2RD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RN0-BQ-vfY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Raa-G3-LEe" secondAttribute="trailing" constant="50" id="VjR-iV-izL"/>
+                            <constraint firstItem="Zrg-5O-2RD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="YJL-Mi-kSl"/>
                             <constraint firstItem="Raa-G3-LEe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hmO-G8-Tei"/>
                             <constraint firstItem="Raa-G3-LEe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="uyR-mh-j9H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pen Details" id="3mS-xO-I2g">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MNg-xA-kGC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MNg-xA-kGC">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="BYZ-38-t0r" id="Eql-no-KVK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nibMaterialTextField" destination="wYm-XM-dqu" id="WJH-rC-ypG"/>
+                        <outlet property="nibSizeTextField" destination="CCj-f9-dko" id="lz5-oc-gh0"/>
+                        <outlet property="penBrandTextField" destination="WSm-yQ-EHZ" id="Ayp-Gi-92C"/>
+                        <outlet property="penNameTextField" destination="nYa-rU-FLV" id="qd5-j8-fGT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
