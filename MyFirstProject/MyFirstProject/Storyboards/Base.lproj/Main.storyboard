@@ -74,7 +74,6 @@
                         <barButtonItem key="backBarButtonItem" title="All Pens" id="bPm-on-8hF"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8pX-Ie-6x1">
                             <connections>
-                                <action selector="addButtonTapped:" destination="EOn-dj-MbN" id="MS1-Wd-Lh2"/>
                                 <segue destination="BYZ-38-t0r" kind="show" id="71d-sZ-c8E"/>
                             </connections>
                         </barButtonItem>
